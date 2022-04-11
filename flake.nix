@@ -4,7 +4,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     flower-power.url = "github:oliverevans96/nix-python-library-example";
   };
-  outputs = { self, nixpkgs-unstable, flake-utils }:
+  outputs = { self, nixpkgs-unstable, flake-utils, flower-power }:
     let
       pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux;
       projectDir = ./.;
@@ -14,7 +14,6 @@
         src = ./.;
         propagatedBuildInputs = [
           flower-power
-          # requests
         ];
       };
     in flake-utils.lib.eachDefaultSystem (system: {
