@@ -13,7 +13,7 @@
         name = "botanizer";
         src = ./.;
         propagatedBuildInputs = [
-          flower-power
+          flower-power.defaultPackage.x86_64-linux
         ];
       };
     in flake-utils.lib.eachDefaultSystem (system: {
